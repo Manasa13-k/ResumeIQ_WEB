@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { FileText, Menu, X, Sparkles } from 'lucide-react'
 
 function Navbar() {
@@ -50,19 +51,30 @@ function Navbar() {
           </nav>
 
           {/* Desktop Action Buttons */}
-          <div className="hidden md:flex items-center gap-3">
-            <button className="text-sm font-medium text-[#F7F3EA] hover:text-[#C8FF3D] hover:bg-[#21182A] px-4 py-2 rounded-xl transition-all cursor-pointer">
-              Login
-            </button>
-            <button className="text-sm font-medium text-[#F7F3EA] bg-[#21182A] hover:bg-[#2A1F36] border border-[#3A2B43] hover:border-[#B9A7FF]/50 px-4 py-2 rounded-xl transition-all cursor-pointer">
-              Register
-            </button>
-            <button className="inline-flex items-center gap-2 text-sm font-bold text-[#120D18] bg-[#C8FF3D] hover:bg-[#d4ff66] active:bg-[#b8f526] px-5 py-2.5 rounded-full shadow-[0_0_15px_rgba(200,255,61,0.2)] hover:shadow-[0_0_22px_rgba(200,255,61,0.4)] hover:scale-[1.02] transition-all cursor-pointer">
-              <Sparkles className="w-4 h-4 text-[#120D18]" />
-              <span>Analyse Resume</span>
-            </button>
-          </div>
+          {/* Desktop Action Buttons */}
+<div className="hidden md:flex items-center gap-3">
+  <Link
+    to="/login"
+    className="text-sm font-medium text-[#F7F3EA] hover:text-[#C8FF3D] hover:bg-[#21182A] px-4 py-2 rounded-xl transition-all"
+  >
+    Login
+  </Link>
 
+  <Link
+    to="/register"
+    className="text-sm font-medium text-[#F7F3EA] bg-[#21182A] hover:bg-[#2A1F36] border border-[#3A2B43] hover:border-[#B9A7FF]/50 px-4 py-2 rounded-xl transition-all"
+  >
+    Register
+  </Link>
+
+  <Link
+    to="/analyze"
+    className="inline-flex items-center gap-2 text-sm font-bold text-[#120D18] bg-[#C8FF3D] hover:bg-[#d4ff66] active:bg-[#b8f526] px-5 py-2.5 rounded-full shadow-[0_0_15px_rgba(200,255,61,0.2)] hover:shadow-[0_0_22px_rgba(200,255,61,0.4)] hover:scale-[1.02] transition-all"
+  >
+    <Sparkles className="w-4 h-4 text-[#120D18]" />
+    <span>Analyse Resume</span>
+  </Link>
+</div>
           {/* Mobile Hamburger Button */}
           <div className="flex md:hidden">
             <button
